@@ -7,10 +7,6 @@ class Manager extends Employee  {
         this.officeNumber = officeNumber;
     };
     
-    setOffice (value) {
-        this.officeNumber = value;
-    };
-    
     getOfficeNumber () {
         return this.officeNumber;
     };
