@@ -53,37 +53,30 @@ const promptManager = () => {
             name: 'name',
             message: "What is the Manager's name?",
             validate: answer => {
-                if(answer !== "") {
-                    return true
-                } return "please enter your name"
+                if(answer !== "") return true
+                return "please enter your name"
             } 
         },
         {
             type: 'input',
             name: 'ID',
             message: "What is your Manager's ID number?",
-            // validate: answer => {
-            //     const pass = answer.match(/^[0-9]{4}\d*$/)
-            //     if (pass === true) {
-            //         return true
-            //     } return 'please enter an ID number'
-            // }
-
+            validate: answer => /^[0-9]{4}\d*$/.test(answer) ? true : 'please enter four digit ID number'
         },
         {
             type: 'input',
             name: 'email',
             message: "What is your Manager's email address?",
             validate: answer => {
-                if(answer !== "") {
-                    return true
-                } return "please enter email address"
+                if(answer !== "") return true
+                return "please enter email address"
             } 
         },
         {
             type: 'input',
             name: 'office',
             message: "What is your Manager's office number?",
+            validate: answer => /^[0-9]{2}\d*$/.test(answer) ? true : 'please enter two digit office number' 
         }
     ]).then(answer => {
         const manager = new Manager(answer.name, answer.ID, answer.email, answer.office);
@@ -99,24 +92,23 @@ const promptEngineer = () => {
             name: 'name',
             message: "What is the employee's name?",
             validate: answer => {
-                if(answer !== "") {
-                    return true
-                } return "please enter your name"
+                if(answer !== "") return true
+                return "please enter your name"
             } 
         },
         {
             type: 'input',
             name: 'ID',
             message: "What is this employee's ID number?",
+            validate: answer => /^[0-9]{4}\d*$/.test(answer) ? true : 'please enter four digit ID number'
         },
         {
             type: 'input',
             name: 'email',
             message: "What is this employee's email address?",
             validate: answer => {
-                if(answer !== "") {
-                    return true
-                } return "please enter your email address"
+                if(answer !== "") return true
+                return "please enter email address"
             } 
         },
         {
@@ -126,7 +118,7 @@ const promptEngineer = () => {
             validate: answer => {
                 if(answer !== "") {
                     return true
-                } return "please enter your username"
+                } return "please enter your Github username"
             } 
         }
     ]).then(answer => {
@@ -143,34 +135,32 @@ const promptIntern = () => {
             name: 'name',
             message: "What is the employee's name?",
             validate: answer => {
-                if(answer !== "") {
-                    return true
-                } return "please enter your name"
+                if(answer !== "") return true
+                return "please enter your name"
             } 
         },
         {
             type: 'input',
             name: 'ID',
-            message: "What is this employee's ID number?",
+            message: "What is the employee's ID number?",
+            validate: answer => /^[0-9]{4}\d*$/.test(answer) ? true : 'please enter four digit ID number'
         },
         {
             type: 'input',
             name: 'email',
-            message: "What is this employee's email address?",
+            message: "What is the employee's email address?",
             validate: answer => {
-                if(answer !== "") {
-                    return true
-                } return "please enter your email address"
+                if(answer !== "") return true
+                return "please enter email address"
             } 
         },
         {
             type: 'input',
             name: 'school',
-            message: "What school does this employee attend?",
+            message: "What school does employee attend?",
             validate: answer => {
-                if(answer !== "") {
-                    return true
-                } return "please enter the school you are currently attending"
+                if(answer !== "") return true
+                return "please enter the school"
             } 
         }
     ]).then(answer => {
