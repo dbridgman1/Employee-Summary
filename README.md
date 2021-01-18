@@ -12,7 +12,7 @@ Link to Walkthrough Video: [Employee Summary Generator](https://drive.google.com
 
 ## Fucntionality
 
-![Screenshot](Assets/Screenshot.JPG)
+![Screenshot](Assets/Screenshot.jpg)
 
 ## Bugs and Issues
 Found a bug? Review any [open issues][open-issues] or create a [new issues here][new-issue] so we can fix it for you!
